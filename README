@@ -7,3 +7,5 @@ Vuosien 2018-2020 aineisto on siivottu seuraavalla komennolla:
 cat s24_2018_beta.vrt | awk '{print $2, $4}' | egrep -v "^id" | perl -pe 's/^[0-9]{1,} //g' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | perl -pe 's/date[0-9]{1,}|^msgtype[a-z]{1,} //g' | tr -d '[:blank:]' | egrep -v "^$" | perl -pe 's/commentid/VIESTIxLOPPU\n\nVIESTIxALKU\ncomment_id_/g' | perl -pe 's/^tiede$/_tiede_/g' | egrep -v "”|–"
 
 Siivotut aineistot on ajettu python-skriptillä, joka löytyy erillisenä tiedostona tästä kansiosta.
+
+Kiitos konsultaatiosta https://github.com/SatanusPotatus!
